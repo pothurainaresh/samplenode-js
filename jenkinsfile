@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages{
+           stage('Git Checkout'){
+        steps{
+           git 'https://github.com/pothurainaresh/samplenode-js.git'
+        }
+    }
         stage(' jenkins pipeline Hello world '){
             steps {
                 sh 'echo "hello world"'
