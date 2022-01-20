@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    stages{
+        stage(' jenkins pipeline Hello world '){
+            steps {
+                sh 'echo "hello world"'
+            }
+        }
+        stage('dependency-check'){
+            steps{
+                dependencyCheck additionalArguments: 'scan="path to scan" -format HTML', odcInstallation: 'dependency-check 5.3.2'
+            }
+        }
+    }
